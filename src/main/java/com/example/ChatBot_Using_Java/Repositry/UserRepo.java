@@ -13,8 +13,11 @@ public interface UserRepo extends JpaRepository<Users,Long> {
 
 	@Query(value = "select * from users where id >5" ,nativeQuery = true)
 	List<Users>findUsersWithIdGreaterThanFive();
-	@Query(value = "select * from users where salary>(select salary from users where id=9)",nativeQuery = true)
+	@Query(value = "select * from users where salary>(select avg(salary) from users )",nativeQuery = true)
 	List<Users> findUsersWithMoreSalary();
+	@Query(value=" SELECT * FROM USERS WHERE DATE_OF_BIRTH BETWEEN '1990-05-14' AND '1995-05-14'",nativeQuery = true)
+	List<Users> findUserWithBirtDate();
+	
 	
 	
 }

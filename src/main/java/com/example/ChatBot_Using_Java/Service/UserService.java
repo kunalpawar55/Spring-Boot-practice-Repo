@@ -35,5 +35,9 @@ public class UserService {
 	{
 		return repo.findUsersWithMoreSalary();
 	}
+	public List<Users> findbydate()
+	{
+		return repo.findUserWithBirtDate();
+	}
 	
 }

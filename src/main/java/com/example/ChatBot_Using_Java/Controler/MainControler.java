@@ -47,4 +47,9 @@ public class MainControler {
 	{
 		return service.moresalary();
 				}
+	@GetMapping("/getbybirthdate")
+	public List<Users> getbybirth()
+	{
+		return service.findbydate();
+	}
 }
